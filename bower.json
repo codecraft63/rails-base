@@ -1,0 +1,23 @@
+{
+  "name": "codecraft",
+  "description": "CodeCraft63 Base Rails Project",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.3.0",
+    "vue-resource": "^1.1.0",
+    "vue-router": "^2.2.0",
+    "vue": "^2.1.10",
+    "vuex": "^2.1.1"
+  }
+}

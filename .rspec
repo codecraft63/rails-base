@@ -1,0 +1,4 @@
+--colour
+--require spec_helper
+--profile 2
+--format Fuubar

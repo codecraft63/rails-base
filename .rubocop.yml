@@ -1,0 +1,77 @@
+require:
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+  DisplayStyleGuide: false
+  Exclude:
+    - Rakefile
+    - bin/**/*
+    - lib/templates/**/*
+    - vendor/**/*
+    - tmp/**/*
+    - config/application.rb
+    - config/environments/*
+
+
+# Style
+
+## Align the elements of a hash literal if they span more than one line.
+Style/AlignHash:
+  Enabled: false
+
+## Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: true
+
+## Use only ascii symbols in identifiers.
+Style/AsciiIdentifiers:
+  Enabled: true
+
+## Document classes and non-namespace modules.
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+## Checks indentation of binary operations that span more than one line.
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+## Checks indentation of method calls with the dot operator that span more than
+## one line.
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Metrics
+
+Metrics/LineLength:
+  Description: 'Limit lines to 120 characters.'
+  Max: 120
+
+
+# Rails
+
+## Enables Rails cops.
+Rails:
+  Enabled: true
+
+## Enforces consistent use of action filter methods.
+Rails/ActionFilter:
+  Enabled: true
+  EnforcedStyle: action
+
+## Prefer `find_by` over `where.first`.
+Rails/FindBy:
+  Enabled: true
+
+## Prefer `all.find_each` over `all.find`.
+Rails/FindEach:
+  Enabled: true
+
+
+
+
