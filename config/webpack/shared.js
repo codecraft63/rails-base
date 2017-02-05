@@ -6,14 +6,14 @@ var extname = require('path-complete-extname')
 
 module.exports = {
   entry: glob.sync(path.join('..', 'app', 'javascript', 'packs', '*.js*')).reduce(
-    function(map, entry) {
+    function (map, entry) {
       var basename = path.basename(entry, extname(entry))
       map[basename] = entry
       return map
     }, {}
   ),
 
-  output: { filename: '[name].js', path: path.resolve('..', 'public', 'packs') },
+  output: {filename: '[name].js', path: path.resolve('..', 'public', 'packs')},
 
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            [ 'latest', { 'es2015': { 'modules': false } } ]
+            ['latest', {'es2015': {'modules': false}}]
           ]
         }
       },
@@ -42,14 +42,17 @@ module.exports = {
   plugins: [],
 
   resolve: {
-    extensions: [ '.js' ],
+    extensions: ['.js'],
     modules: [
       path.resolve('../app/javascript'),
       path.resolve('../vendor/node_modules')
-    ]
+    ],
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+    }
   },
 
   resolveLoader: {
-    modules: [ path.resolve('../vendor/node_modules') ]
+    modules: [path.resolve('../vendor/node_modules')]
   }
 };

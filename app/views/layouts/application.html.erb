@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Codecraft</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Codecraft</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<div id="app">
+  <%= yield %>
+</div>
+<%= javascript_pack_tag 'application' %>
+</body>
 </html>
