@@ -7,10 +7,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.0.1'
-
 # Supported DBs
 gem 'pg', '~> 0.18'
+
+gem 'rails', '~> 5.0.1'
 
 # Application Server
 gem 'puma', '~> 3.0'
@@ -85,6 +85,7 @@ end
 
 group :development do
   gem 'listen', '~> 3.0.5'
+  gem 'foreman', require: false
 
   gem 'spring'
   gem 'spring-commands-rspec', '~> 1.0.4'
