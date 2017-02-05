@@ -84,8 +84,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.0.5'
   gem 'foreman', require: false
+  gem 'listen', '~> 3.0.5'
 
   gem 'spring'
   gem 'spring-commands-rspec', '~> 1.0.4'
