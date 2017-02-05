@@ -18,8 +18,8 @@ gem 'puma', '~> 3.0'
 # SASS Support
 gem 'sass-rails', '~> 5.0'
 
-# Sprockets ES6 support
-gem 'sprockets-es6'
+# Early Webpack rails support
+gem 'webpacker', github: 'rails/webpacker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

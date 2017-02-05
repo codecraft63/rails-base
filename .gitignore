@@ -22,6 +22,7 @@
 
 # Bower components
 /vendor/assets/bower_components
+/vendor/node_modules
 
 # Config files
 /config/database.yml
@@ -32,3 +33,4 @@
 
 # Development ENV file
 .env
+/public/packs
