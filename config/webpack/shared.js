@@ -17,7 +17,6 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.coffee(.erb)?$/, loader: "coffee-loader" },
       {
         test: /\.js(.erb)?$/,
         exclude: /node_modules/,
@@ -43,7 +42,7 @@ module.exports = {
   plugins: [],
 
   resolve: {
-    extensions: [ '.js', '.coffee' ],
+    extensions: [ '.js' ],
     modules: [
       path.resolve('../app/javascript'),
       path.resolve('../vendor/node_modules')
@@ -53,4 +52,4 @@ module.exports = {
   resolveLoader: {
     modules: [ path.resolve('../vendor/node_modules') ]
   }
-}
+};
