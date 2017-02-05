@@ -72,32 +72,32 @@ It's based on Rails 5 and Ruby 2.3.3.
 
 3. Run setup script
 
-  ```bash
-  bin/setup
-  ```
+    ```bash
+    bin/setup
+    ```
 
 4. Run test and quality suits to make sure all dependencies are satisfied and 
    applications works correctly before making changes.
 
-  ```bash
-  bin/ci
-  ```
+    ```bash
+    bin/ci
+    ```
 
 5. Run app
 
-  ```bash
-  bin/server
-  ```
+    ```bash
+    bin/server
+    ```
 
 6. Update README
 
-  Do not forget to update application `README.md` file with detailed information based on the
-  existing template.
+    Do not forget to update application `README.md` file with detailed information based on the
+    existing template.  
 
-  ```bash
-  # update README.md
-  git commit -am "Update README.md"
-  ```
+    ```bash
+    # update README.md
+    git commit -am "Update README.md"
+    ```
 
 ## Credits
 
