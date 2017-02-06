@@ -24,10 +24,6 @@
 /vendor/assets/bower_components
 /vendor/node_modules
 
-# Config files
-/config/database.yml
-/config/secrets.yml
-
 # RSpec helper files
 /spec/examples.txt
 
