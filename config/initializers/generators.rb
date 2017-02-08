@@ -1,4 +1,5 @@
 Rails.application.config.app_generators do |g|
+  g.orm :active_record, primary_key_type: :uuid
   g.stylesheets false
   g.helper false
   g.integration_tool false
