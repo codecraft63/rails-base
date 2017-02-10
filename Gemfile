@@ -59,6 +59,7 @@ group :test do
   gem 'timecop', '~> 0.8.0'
 
   gem 'codeclimate-test-reporter', require: false
+  gem 'simplecov', require: false
 end
 
 group :development, :test do

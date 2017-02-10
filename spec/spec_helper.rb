@@ -1,4 +1,4 @@
-require 'support/codeclimate'
+require 'support/code_coverage'
 
 RSpec.configure do |config|
   config.backtrace_exclusion_patterns << /\.bundle/

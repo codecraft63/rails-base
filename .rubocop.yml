@@ -13,6 +13,7 @@ AllCops:
     - tmp/**/*
     - config/application.rb
     - config/environments/*
+    - db/schema.rb
 
 
 # Style
