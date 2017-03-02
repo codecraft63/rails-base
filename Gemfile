@@ -10,7 +10,7 @@ end
 # Supported DBs
 gem 'pg', '~> 0.18'
 
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0.2'
 
 # Application Server
 gem 'puma', '~> 3.0'
