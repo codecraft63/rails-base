@@ -30,3 +30,5 @@
 # Development ENV file
 .env
 /public/packs
+/public/packs
+/node_modules
