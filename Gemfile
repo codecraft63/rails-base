@@ -37,6 +37,9 @@ gem 'kaminari', '~> 1.0.0'
 # Authorization
 gem 'pundit', '~> 1.1'
 
+# Meta tags
+gem 'meta-tags', '~> 2.4.0'
+
 group :staging, :production do
   gem 'newrelic_rpm'
   gem 'rails_stdout_logging'

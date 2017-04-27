@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Codecraft</title>
+  <%= display_meta_tags title:       settings.title,
+                        icon:        '/favicon.ico',
+                        description: settings.description,
+                        keywords:    settings.keywords.split(','),
+                        canonical:   root_url,
+                        reverse:     true,
+                        charset:     'utf-8',
+                        noindex:     false, follow: true
+  %>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,6 +23,7 @@
 <div id="app">
   <%= yield %>
 </div>
+
 <%= javascript_pack_tag 'application' %>
 </body>
 </html>
