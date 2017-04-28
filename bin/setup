@@ -18,9 +18,8 @@ chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
 
-  puts "\n== Installing bower and npm(yarn) dependencies =="
-  system! 'bower install'
-  system! 'bin/yarn install'
+  puts "\n== Installing npm(yarn) dependencies =="
+  system('bin/yarn')
 
   puts "\n== Copying sample files =="
   unless File.exist?('.env')
@@ -32,4 +31,7 @@ chdir APP_ROOT do
 
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
+
+  puts "\n== Restarting application server =="
+  system! 'bin/rails restart'
 end

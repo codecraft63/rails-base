@@ -7,19 +7,19 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rails', '~> 5.1.0'
+
 # Supported DBs
 gem 'pg', '~> 0.18'
 
-gem 'rails', '~> 5.0.2'
-
 # Application Server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.7'
 
 # SASS Support
 gem 'sass-rails', '~> 5.0'
 
-# Early Webpack rails support
-gem 'webpacker', github: 'rails/webpacker'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -66,7 +66,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', '~> 2.2.1'
 
   gem 'awesome_print', '~> 1.7.0', require: false
   gem 'byebug', platform: :mri
@@ -89,7 +89,7 @@ end
 
 group :development do
   gem 'foreman', require: false
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '>= 3.0.5', '< 3.2'
 
   gem 'spring'
   gem 'spring-commands-rspec', '~> 1.0.4'
@@ -97,7 +97,11 @@ group :development do
 
   gem 'bullet', '~> 5.2.0', require: false
   gem 'letter_opener'
+
   # Better errors handler
   gem 'better_errors', '~> 2.1.1'
   gem 'binding_of_caller', '~> 0.7.2'
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
