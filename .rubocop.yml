@@ -17,18 +17,31 @@ AllCops:
     - node_modules/**/*
 
 
-# Style
+# Layout
 
 ## Align the elements of a hash literal if they span more than one line.
-Style/AlignHash:
+Layout/AlignHash:
   Enabled: false
+
+## Checks indentation of binary operations that span more than one line.
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+## Checks indentation of method calls with the dot operator that span more than
+## one line.
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+# Naming
+
+## Use only ascii symbols in identifiers.
+Naming/AsciiIdentifiers:
+  Enabled: true
+
+# Style
 
 ## Use only ascii symbols in comments.
 Style/AsciiComments:
-  Enabled: true
-
-## Use only ascii symbols in identifiers.
-Style/AsciiIdentifiers:
   Enabled: true
 
 ## Document classes and non-namespace modules.
@@ -37,15 +50,6 @@ Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
-
-## Checks indentation of binary operations that span more than one line.
-Style/MultilineOperationIndentation:
-  Enabled: false
-
-## Checks indentation of method calls with the dot operator that span more than
-## one line.
-Style/MultilineMethodCallIndentation:
   Enabled: false
 
 # Metrics
