@@ -17,18 +17,26 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+# Ignore uploaded files in development
+/storage/*
+
 # Ignore code coverage folder
 /coverage/*
 
 # Bower components
 /vendor/assets/bower_components
-/vendor/node_modules
+
+/node_modules
+/yarn-error.log
+
+/public/packs
+/public/assets
 
 # RSpec helper files
 /spec/examples.txt
 
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
 # Development ENV file
 .env
-/public/packs
-/public/packs
-/node_modules

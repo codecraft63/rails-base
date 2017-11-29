@@ -2,24 +2,24 @@ source 'https://rubygems.org'
 
 ruby '~> 2.3'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 5.2.0.beta2'
 
 # Supported DBs
 gem 'pg', '~> 0.20'
 
 # Application Server
-gem 'puma', '~> 3.8'
+gem 'puma', '~> 3.11'
 
 # SASS Support
 gem 'sass-rails', '~> 5.0'
 
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 1.2'
+gem 'webpacker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.11'
@@ -53,7 +53,7 @@ group :test do
   gem 'ffaker', '~> 2.5'
   gem 'shoulda-matchers', '~> 3.1', require: false
 
-  gem 'factory_girl_rails', '~> 4.8'
+  gem 'factory_bot_rails', '~> 4.8'
   gem 'webmock', '~> 3.0', require: false
 
   gem 'email_spec'

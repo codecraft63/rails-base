@@ -5,6 +5,7 @@ require 'rails'
 require 'active_model/railtie'
 require 'active_job/railtie'
 require 'active_record/railtie'
+require 'active_storage/engine'
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'action_view/railtie'
@@ -19,7 +20,7 @@ Bundler.require(*Rails.groups)
 module Codecraft
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -34,5 +35,8 @@ module Codecraft
 
     # Set URL options to be able to use url_for helpers
     config.action_mailer.default_url_options = { host: ENV.fetch('HOST') }
+
+    # Don't generate system test files.
+    config.generators.system_tests = nil
   end
 end
