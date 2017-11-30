@@ -28,6 +28,12 @@ chdir APP_ROOT do
     cp '.env.example', '.env'
   end
 
+  # Create the credentials and master key
+  unless File.exist?('config/credentials.yml.enc')
+    puts "\n== Creating new credentials file and key"
+    system! 'EDITOR="vim" bin/rails credentials:edit'
+  end
+
   puts "\n== Preparing database =="
   system! 'bin/rails db:setup'
 
