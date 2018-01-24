@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2017_11_29_151613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
-  enable_extension "uuid-ossp"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
