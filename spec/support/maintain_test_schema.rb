@@ -1,3 +1,3 @@
-if defined?(ActiveRecord::Migration)
-  ActiveRecord::Migration.maintain_test_schema!
-end
+
+ActiveRecord::Migration.maintain_test_schema! if
+  defined?(ActiveRecord::Migration)
