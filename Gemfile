@@ -4,7 +4,7 @@ ruby '~> 2.3'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 5.2.0.beta2'
+gem 'rails', '~> 5.2.0'
 
 # Supported DBs
 gem 'pg', '~> 0.20'
@@ -53,7 +53,7 @@ group :test do
   gem 'ffaker', '~> 2.8'
   gem 'shoulda-matchers', '~> 3.1', require: false
 
-  gem 'factory_bot_rails', '~> 4.8'
+  gem 'factory_bot_rails  ', '~> 4.8'
   gem 'webmock', '~> 3.3', require: false
 
   gem 'email_spec'
