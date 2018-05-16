@@ -4,7 +4,7 @@ ruby '~> 2.3'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '~> 5.2.0.beta2'
+gem 'rails', '~> 5.2.0'
 
 # Supported DBs
 gem 'pg', '~> 0.20'

@@ -23,9 +23,9 @@ module Codecraft
     config.load_defaults 5.2
 
     # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-    # Do not swallow errors in after_commit/after_rollback callbacks.
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
 
     # Enable deflate / gzip compression of controller-generated responses
     config.middleware.use Rack::Deflater
