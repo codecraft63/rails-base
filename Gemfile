@@ -53,7 +53,7 @@ group :test do
   gem 'ffaker', '~> 2.8'
   gem 'shoulda-matchers', '~> 3.1', require: false
 
-  gem 'factory_bot_rails  ', '~> 4.8'
+  gem 'factory_bot_rails', '~> 4.8'
   gem 'webmock', '~> 3.3', require: false
 
   gem 'email_spec'
