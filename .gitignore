@@ -38,5 +38,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Development ENV file
+# Ignore Development ENV file
 .env
+
+# Ignore database confif file
+/config/database.yml
