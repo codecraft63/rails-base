@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.3'
+ruby '~> 2.5'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '~> 5.2.0'
 
 # Supported DBs
-gem 'pg', '~> 0.20'
+gem 'pg', '>= 0.18', '< 2.0'
 
 # Application Server
 gem 'puma', '~> 3.11'
@@ -16,7 +16,7 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.8', require: false
+gem 'bootsnap', '>= 1.1.0', require: false
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
@@ -24,12 +24,13 @@ gem 'webpacker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.11'
 
-# API
-# gem 'jbuilder', '~> 2.6'
-# gem 'rack-cors', '~> 0.4'
+# Use ActiveStorage variant
+gem 'mini_magick', '~> 4.8'
 
-# Faster JSON
-gem 'oj', '~> 3.3'
+# API
+# gem 'jbuilder', '~> 2.5'
+# gem 'oj', '~> 3.6.2' # Faster JSON
+# gem 'rack-cors', '~> 0.4'
 
 # Pagination
 gem 'kaminari', '~> 1.1'
@@ -39,6 +40,21 @@ gem 'pundit', '~> 1.1'
 
 # Meta tags
 gem 'meta-tags', '~> 2.7'
+
+# Authentication
+# gem 'devise', '~> 4.4.3'
+# gem 'omniauth'
+# gem 'omniauth-facebook'
+
+# Administration
+# gem 'activeadmin', '~> 1.3.0'
+
+# Background Job
+# gem 'sidekiq'
+
+# Auditing
+# gem 'paper_trail', '~> 9.1.1'
+
 
 group :staging, :production do
   gem 'newrelic_rpm'

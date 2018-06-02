@@ -314,7 +314,7 @@ DEPENDENCIES
   awesome_print (~> 1.8.0)
   better_errors (~> 2.4.0)
   binding_of_caller (~> 0.8.0)
-  bootsnap (>= 1.1.8)
+  bootsnap (>= 1.1.0)
   brakeman
   bullet (~> 5.7)
   bundler-audit (~> 0.6.0)
@@ -336,7 +336,7 @@ DEPENDENCIES
   meta-tags (~> 2.7)
   newrelic_rpm
   oj (~> 3.3)
-  pg (~> 0.20)
+  pg (>= 0.18, < 2.0)
   poltergeist (~> 1.17)
   pry-byebug (~> 3.5)
   pry-rails (~> 0.3)
