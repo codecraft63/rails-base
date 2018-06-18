@@ -1,4 +1,4 @@
-require 'support/code_coverage'
+require "support/code_coverage"
 
 RSpec.configure do |config|
   config.backtrace_exclusion_patterns << /\.bundle/
@@ -17,10 +17,10 @@ RSpec.configure do |config|
 
   begin
     config.filter_run_when_matching :focus
-    config.example_status_persistence_file_path = 'spec/examples.txt'
+    config.example_status_persistence_file_path = "spec/examples.txt"
     config.disable_monkey_patching!
 
-    config.default_formatter = 'doc' if config.files_to_run.one?
+    config.default_formatter = "doc" if config.files_to_run.one?
 
     config.profile_examples = 10
 

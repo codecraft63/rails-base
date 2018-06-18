@@ -1,14 +1,14 @@
-ENV['RAILS_ENV'] ||= 'test'
+ENV["RAILS_ENV"] ||= "test"
 
-require 'spec_helper'
-require File.expand_path('../config/environment', __dir__)
+require "spec_helper"
+require File.expand_path("../config/environment", __dir__)
 
-abort('The Rails environment is running in production mode!') if
+abort("The Rails environment is running in production mode!") if
   Rails.env.production?
 
-require 'rspec/rails'
-require 'support/maintain_test_schema'
-require 'support/database_cleaner'
+require "rspec/rails"
+require "support/maintain_test_schema"
+require "support/database_cleaner"
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false

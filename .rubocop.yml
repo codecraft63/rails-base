@@ -1,84 +1,141 @@
-require:
-  - rubocop-rspec
-
 AllCops:
-  TargetRubyVersion: 2.5
-  DisplayCopNames: true
-  DisplayStyleGuide: false
   Exclude:
-    - Rakefile
-    - bin/**/*
-    - lib/templates/**/*
-    - vendor/**/*
-    - tmp/**/*
-    - config/application.rb
-    - config/environments/*
-    - db/schema.rb
-    - db/migrate/*
-    - node_modules/**/*
+    - "db/schema.rb" # You can't touch this
+    - ".bundle/**/*" # Auto-generated
+    - "bin/**/*"     # Auto-generated
+    - "tmp/**/*"     # Auto-generated
+    - "vendor/**/*"  # We cannot solve the world's problems
+    - "node_modules/**/*"  # We cannot solve the world's problems
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
 
-
-# Layout
-
-## Align the elements of a hash literal if they span more than one line.
-Layout/AlignHash:
-  Enabled: false
-
-## Checks indentation of binary operations that span more than one line.
-Layout/MultilineOperationIndentation:
-  Enabled: false
-
-## Checks indentation of method calls with the dot operator that span more than
-## one line.
-Layout/MultilineMethodCallIndentation:
-  Enabled: false
-
-# Naming
-
-## Use only ascii symbols in identifiers.
-Naming/AsciiIdentifiers:
+Rails:
   Enabled: true
 
-# Style
-
-## Use only ascii symbols in comments.
-Style/AsciiComments:
-  Enabled: true
-
-## Document classes and non-namespace modules.
-Style/Documentation:
-  Description: 'Document classes and non-namespace modules.'
+Metrics/AbcSize:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 80
+  Exclude:
+    - "features/support/env.rb"
+    - "script/cucumber"
+    - "lib/tasks/cucumber.rake"
+    - "config/initializers/*.rb"
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+  IndentationWidth: 2
+
+Style/CaseEquality:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "app/controllers/**/*"
+    - "app/helpers/**/*"
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - "spec/**/*"
+    - "lib/tasks/*.rake"
+
+Layout/FirstParameterIndentation:
+  IndentationWidth: 2
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-# Metrics
+Layout/IndentArray:
+  IndentationWidth: 2
 
-Metrics/LineLength:
-  Description: 'Limit lines to 120 characters.'
-  Max: 120
+Layout/IndentAssignment:
+  IndentationWidth: 2
 
+Layout/IndentHash:
+  IndentationWidth: 2
 
-# Rails
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: same_line
 
-## Enables Rails cops.
-Rails:
-  Enabled: true
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+  IndentationWidth: 2
 
-## Enforces consistent use of action filter methods.
-Rails/ActionFilter:
-  Enabled: true
-  EnforcedStyle: action
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: same_line
 
-## Prefer `find_by` over `where.first`.
-Rails/FindBy:
-  Enabled: true
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+  IndentationWidth: 2
 
-## Prefer `all.find_each` over `all.find`.
-Rails/FindEach:
-  Enabled: true
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
 
+Style/SignalException:
+  EnforcedStyle: only_raise
 
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
 
+Style/TrivialAccessors:
+  ExactNameMatch: true
 
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SpaceBeforeBlockParameters: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
+Style/Documentation:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - "spec/**/*" # because let statements use braces for multiline blocks
+
+Layout/BlockEndNewline:
+  Exclude:
+    - "spec/**/*" # because let statements use braces for multiline blocks
+
+Layout/MultilineBlockLayout:
+  Exclude:
+    - "spec/**/*" # because let statements use braces for multiline blocks
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
+  Exclude:
+    - "spec/**/*" # because sometimes we use this in expect or then blocks
+
+Style/RaiseArgs:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
