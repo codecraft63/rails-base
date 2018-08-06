@@ -8,7 +8,7 @@
 
 console.log('Hello World from Webpacker');
 
-import Vue from 'vue';
+import Vue from 'vue/dist/vue.esm';
 import { sync } from 'vuex-router-sync';
 
 import store from '../store';
@@ -16,7 +16,9 @@ import router from '../router';
 
 sync(store, router);
 
-new Vue({
-  el: '#app',
-  store
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new Vue({
+    el: '#app',
+    store
+  })
+})
