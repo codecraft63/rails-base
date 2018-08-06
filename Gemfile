@@ -61,8 +61,9 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara", "~> 2.17"
-  gem "poltergeist", "~> 1.17"
+  gem "capybara", "~> 3.5"
+  gem "capybara-screenshot", "~> 1.0"
+  gem "selenium-webdriver", "~> 3.14"
 
   gem "database_cleaner", "~> 1.6"
   gem "ffaker", "~> 2.8"
@@ -89,7 +90,7 @@ group :development, :test do
   gem "pry-rails", "~> 0.3"
 
   gem "fuubar", "~> 2.3"
-  gem "rspec-rails", "~> 3.7"
+  gem "rspec-rails", "~> 3.8"
   gem "rspec-retry", "~> 0.5"
 
   gem "rubocop", "~> 0.52", require: false
