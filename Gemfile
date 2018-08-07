@@ -70,7 +70,9 @@ group :test do
   gem "shoulda-matchers", "~> 3.1", require: false
 
   gem "factory_bot_rails", "~> 4.8"
-  gem "webmock", "~> 3.3", require: false
+
+  gem "vcr", "~> 4.0"
+  gem "webmock", "~> 3.4", require: false
 
   gem "email_spec"
 
