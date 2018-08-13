@@ -4,7 +4,7 @@
     "test": "NODE_ENV=test karma start"
   },
   "dependencies": {
-    "@rails/webpacker": "^3.5",
+    "@rails/webpacker": "3.5",
     "foundation-sites": "^6.4.3",
     "vue": "^2.5.17",
     "vue-loader": "14.2.2",
@@ -25,6 +25,6 @@
     "karma-webpack": "^3.0.0",
     "testdouble": "^3.8.1",
     "testdouble-jasmine": "^0.2.1",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "2.11.2"
   }
 }
