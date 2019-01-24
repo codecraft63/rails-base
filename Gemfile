@@ -112,8 +112,8 @@ group :development do
 
   gem "spring"
   gem "spring-commands-rspec", "~> 1.0"
-  gem "spring-watcher-listen", "~> 2.0"
   gem "spring-commands-rubocop", "~> 0.2"
+  gem "spring-watcher-listen", "~> 2.0"
 
   gem "bullet", "~> 5.9", require: false
   gem "letter_opener"
