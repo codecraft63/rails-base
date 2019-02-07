@@ -375,7 +375,7 @@ DEPENDENCIES
   tzinfo-data
   vcr (~> 4.0)
   webmock (~> 3.5)
-  webpacker
+  webpacker (~> 3.5)
 
 RUBY VERSION
    ruby 2.5.3p105

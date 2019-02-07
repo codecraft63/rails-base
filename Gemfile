@@ -19,7 +19,7 @@ gem "sass-rails", "~> 5.0"
 gem "bootsnap", ">= 1.3.0", require: false
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker"
+gem "webpacker", "~> 3.5"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.12'

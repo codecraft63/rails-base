@@ -1,5 +1,7 @@
 .git*
 log/*
-tmp/*d
+tmp/*
+vendor/cache/*
+config/deploy/*
 Dockerfile
 README.rdoc

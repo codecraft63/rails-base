@@ -1,33 +1,62 @@
-FROM ruby:alpine
+FROM ruby:2.5-alpine as build
+
+MAINTAINER Codecraft Team <team@codecraft63.com>
 
 ENV LANG C.UTF-8
 
-RUN apk update && \
-    apk add --no-cache \
+RUN apk add --no-cache \
         build-base \
         tzdata \
+        zlib-dev \
+        libxml2-dev \
+        libxslt-dev \
+        ca-certificates \
+        bash \
+        linux-headers \
+        postgresql-client \
+        postgresql-dev \
         nodejs \
         yarn \
-        postgresql-dev \
-        libxml2-dev \
-        libxslt-dev
+        && rm -rf /var/cache/apk/*
 
-ENV ENTRYKIT_VERSION 0.4.0
-
-RUN wget https://github.com/progrium/entrykit/releases/download/v${ENTRYKIT_VERSION}/entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz \
-    && tar -xvzf entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz \
-    && rm entrykit_${ENTRYKIT_VERSION}_Linux_x86_64.tgz \
-    && mv entrykit /bin/entrykit \
-    && chmod +x /bin/entrykit \
-    && entrykit --symlink
-
-RUN mkdir /app
+RUN mkdir -p /app/config
 WORKDIR /app
 
-RUN gem install bundler --force
-RUN bundle config build.nokogiri --use-system-libraries
+COPY . /app
 
-ENTRYPOINT [ \
-    "prehook", "ruby -v", "--", \
-    "prehook", "bundle --version", "--", \
-    "prehook", "bundle install -j3 --quiet", "--"]
+RUN mv /app/config/database.yml.example /app/config/database.yml
+
+RUN gem install bundler io-console -N \
+    && bundle config build.nokogiri --use-system-libraries \
+    && bundle install --jobs 20 --retry 5 --without deploy
+
+RUN RAILS_ENV=production SECRET_KEY_BASE=1234 bin/rails assets:precompile
+
+
+
+FROM ruby:2.5-alpine
+
+MAINTAINER Codecraft Team <team@codecraft63.com>
+
+ENV LANG C.UTF-8
+
+RUN apk add --no-cache \
+  nodejs \
+  yarn \
+  postgresql-client \
+  ca-certificates \
+  bash \
+  tzdata \
+  && rm -rf /var/cache/apk/*
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY --from=build /usr/local/bin/gem /usr/local/bin/gem
+COPY --from=build /usr/local/bundle/ /usr/local/bundle/
+COPY --from=build /app/ /app/
+
+EXPOSE 3000
+
+ENTRYPOINT ["bundle", "exec"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
