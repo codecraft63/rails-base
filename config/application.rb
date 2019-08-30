@@ -35,10 +35,12 @@ module Codecraft
 
     # Set default From address for all Mailers
     config.action_mailer.default_options = {
-      from: ENV.fetch("MAILER_SENDER_ADDRESS", "john.doe@example.org")}
+      from: ENV.fetch("MAILER_SENDER_ADDRESS",
+                      "john.doe@example.org")}
 
     # Set URL options to be able to use url_for helpers
-    config.action_mailer.default_url_options = {host: ENV.fetch("HOST", "localhost")}
+    config.action_mailer.default_url_options = {
+      host: ENV.fetch("HOST", "localhost")}
 
     # Don't generate system test files.
     config.generators.system_tests = nil

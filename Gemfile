@@ -19,7 +19,7 @@ gem "sass-rails", "~> 6"
 gem "webpacker", "~> 4.0"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.9'
+gem "jbuilder", "~> 2.9"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.12'
@@ -66,7 +66,7 @@ group :test do
   gem "capybara", "~> 3.28"
   gem "capybara-screenshot", "~> 1.0"
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
+  gem "webdrivers"
 
   gem "database_cleaner", "~> 1.7"
   gem "ffaker", "~> 2.12"

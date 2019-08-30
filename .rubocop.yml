@@ -7,10 +7,6 @@ AllCops:
     - "vendor/**/*"  # We cannot solve the world's problems
     - "node_modules/**/*"  # We cannot solve the world's problems
   TargetRubyVersion: 2.5
-  TargetRailsVersion: 5.2
-
-Rails:
-  Enabled: true
 
 Metrics/AbcSize:
   Enabled: false
@@ -35,9 +31,6 @@ Metrics/MethodLength:
 Metrics/ParameterLists:
   Enabled: false
 
-Rails/FilePath:
-  Enabled: false
-
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
   IndentationWidth: 2
@@ -55,19 +48,19 @@ Layout/EmptyLinesAroundBlockBody:
     - "spec/**/*"
     - "lib/tasks/*.rake"
 
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   IndentationWidth: 2
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   IndentationWidth: 2
 
 Layout/IndentAssignment:
   IndentationWidth: 2
 
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   IndentationWidth: 2
 
 Layout/MultilineMethodCallBraceLayout:
@@ -135,7 +128,4 @@ Style/Semicolon:
     - "spec/**/*" # because sometimes we use this in expect or then blocks
 
 Style/RaiseArgs:
-  Enabled: false
-
-Rails/InverseOf:
   Enabled: false
