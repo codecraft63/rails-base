@@ -4,56 +4,58 @@ ruby "~> 2.5"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "rails", "~> 5.2"
+gem "rails", "~> 6.0"
 
 # Supported DBs
 gem "pg", ">= 0.18", "< 2.0"
 
 # Application Server
-gem "puma", "~> 3.12"
+gem "puma", "~> 4.1"
 
 # SASS Support
-gem "sass-rails", "~> 5.0"
-
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", ">= 1.3.0", require: false
+gem "sass-rails", "~> 6"
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker", "~> 3.5"
+gem "webpacker", "~> 4.0"
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.12'
 
-# Use ActiveStorage variant
-gem "mini_magick", "~> 4.9"
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", ">= 1.4.2", require: false
 
 # API
-# gem 'jbuilder', '~> 2.8'
-# gem 'oj', '~> 3.7' # Faster JSON
+# gem 'oj', '~> 3.9' # Faster JSON
 # gem 'rack-cors', '~> 1.0'
 
 # Pagination
 gem "kaminari", "~> 1.1"
 
 # Authorization
-gem "pundit", "~> 2.0"
+gem "pundit", "~> 2.1"
 
 # Meta tags
 gem "meta-tags", "~> 2.11"
 
 # Authentication
-# gem 'devise', '~> 4.5'
+# gem 'devise', '~> 4.7'
 # gem 'omniauth'
 # gem 'omniauth-facebook'
 
 # Administration
-# gem 'activeadmin', '~> 1.4'
+# gem 'activeadmin', '~> 2.2'
 
 # Background Job
 # gem 'sidekiq'
 
 # Auditing
-# gem 'paper_trail', '~> 10.1'
+# gem 'paper_trail', '~> 10.3'
 
 group :staging, :production do
   gem "newrelic_rpm"
@@ -61,19 +63,20 @@ group :staging, :production do
 end
 
 group :test do
-  gem "capybara", "~> 3.12"
+  gem "capybara", "~> 3.28"
   gem "capybara-screenshot", "~> 1.0"
-  gem "selenium-webdriver", "~> 3.141"
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'webdrivers'
 
   gem "database_cleaner", "~> 1.7"
-  gem "ffaker", "~> 2.10"
-  gem "shoulda-matchers", "~> 3.1", require: false
+  gem "ffaker", "~> 2.12"
+  gem "shoulda-matchers", "~> 4.1", require: false
 
-  gem "factory_bot_rails", "~> 4.11"
+  gem "factory_bot_rails", "~> 5.0"
   gem "pundit-matchers", "~> 1.6"
 
-  gem "vcr", "~> 4.0"
-  gem "webmock", "~> 3.5", require: false
+  gem "vcr", "~> 5.0"
+  gem "webmock", "~> 3.7", require: false
 
   gem "email_spec"
 
@@ -85,19 +88,19 @@ group :test do
 end
 
 group :development, :test do
-  gem "dotenv-rails", "~> 2.6"
+  gem "dotenv-rails", "~> 2.7"
 
   gem "awesome_print", "~> 1.8", require: false
   gem "byebug", platform: :mri
-  gem "pry-byebug", "~> 3.6", platform: :mri
+  gem "pry-byebug", "~> 3.7", platform: :mri
   gem "pry-rails", "~> 0.3"
 
-  gem "fuubar", "~> 2.3"
+  gem "fuubar", "~> 2.4"
   gem "rspec-rails", "~> 3.8"
   gem "rspec-retry", "~> 0.6"
 
-  gem "rubocop", "~> 0.63", require: false
-  gem "rubocop-rspec", "~> 1.31", require: false
+  gem "rubocop", "~> 0.74", require: false
+  gem "rubocop-rspec", "~> 1.35", require: false
 
   gem "brakeman", require: false
   gem "scss_lint", require: false
@@ -115,7 +118,7 @@ group :development do
   gem "spring-commands-rubocop", "~> 0.2"
   gem "spring-watcher-listen", "~> 2.0"
 
-  gem "bullet", "~> 5.9", require: false
+  gem "bullet", "~> 6.0", require: false
   gem "letter_opener"
 
   # Better errors handler
