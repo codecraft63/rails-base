@@ -1,4 +1,4 @@
-FROM ruby:2.5-alpine as build
+FROM ruby:2.6-alpine as build
 
 MAINTAINER Codecraft Team <team@codecraft63.com>
 
@@ -34,7 +34,7 @@ RUN RAILS_ENV=production SECRET_KEY_BASE=1234 bin/rails assets:precompile
 
 
 
-FROM ruby:2.5-alpine
+FROM ruby:2.6-alpine
 
 MAINTAINER Codecraft Team <team@codecraft63.com>
 
