@@ -88,6 +88,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "sqlite3"
   gem "dotenv-rails", "~> 2.7"
 
   gem "awesome_print", "~> 1.8", require: false
@@ -113,7 +114,7 @@ end
 
 group :development do
   gem "foreman", require: false
-  gem "listen", ">= 3.2.1", "< 3.2"
+  gem "listen", ">= 3.1.5", "< 3.2"
 
   gem "spring"
   gem "spring-commands-rspec", "~> 1.0"

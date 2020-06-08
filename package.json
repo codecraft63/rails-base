@@ -5,10 +5,11 @@
   },
   "dependencies": {
     "@rails/activestorage": "^6.0.3-1",
-    "@rails/webpacker": "^5.1.1",
+    "@rails/webpacker": "5.1.1",
+    "@vue/composition-api": "^0.6.1",
     "foundation-sites": "^6.6.3",
     "vue": "^2.6.11",
-    "@vue/composition-api": "^0.6.1",
+    "vue-router": "^3.3.2",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.4.0",
