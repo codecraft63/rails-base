@@ -35,7 +35,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 # gem 'rack-cors', '~> 1.0'
 
 # Pagination
-gem "kaminari", "~> 1.1"
+gem "kaminari", "~> 1.2"
 
 # Authorization
 gem "pundit", "~> 2.1"
