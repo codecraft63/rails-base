@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore IDE things
+/.idea
+
 # Ignore bundler config.
 /.bundle
 
@@ -15,10 +18,13 @@
 .sass-cache
 
 # Ignore Byebug command history file.
-.byebug_history
+/.byebug_history
 
 # Ignore uploaded files in development
 /storage/*
+/public/packs
+/public/assets
+/public/packs-test
 
 # Ignore code coverage folder
 /coverage/*
@@ -26,26 +32,22 @@
 # Bower components
 /vendor/assets/bower_components
 
+# Node & Yarn things
 /node_modules
 /yarn-error.log
-
-/public/packs
-/public/assets
+/yarn-debug.log*
+/.yarn-integrity
 
 # RSpec helper files
 /spec/examples.txt
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 
 # Ignore Development ENV file
-.env
+/.env
 
-# Ignore database confif file
+# Ignore database config file
 /config/database.yml
-/public/packs-test
-yarn-debug.log*
-.yarn-integrity
-
-/.idea/*
-
+/db/*.sqlite*
