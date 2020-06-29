@@ -4,30 +4,25 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "~> 2.5"
 
 gem "rails", "~> 6.0"
-
-# Supported DBs
-gem "pg", ">= 0.18", "< 2.0"
-
-# Application Server
 gem "puma", "~> 4.3"
 
-# SASS Support
-gem "sass-rails", "~> 6"
-
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker", "~> 5.1"
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem "jbuilder", "~> 2.10"
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1'
-
-# Use Active Storage variant
+# Drives
+gem "pg", ">= 0.18", "< 2.0"
+# gem 'redis', '~> 4.0'
+# gem 'redis-namespace'
+# gem 'connection_pool'
 # gem 'image_processing', '~> 1.11'
 
-# Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", ">= 1.4.6", require: false
+# JavaScript and assets
+gem "webpacker", "~> 5.1"
+gem "jbuilder", "~> 2.10"
+gem "sassc-rails", "~> 2.1"
+# gem 'local_time', '~> 2.0'
+
+# Security
+gem 'bcrypt', '~> 3.1'
+gem 'pwned', '~> 2.0'
+# gem 'rack-ratelimit', github: 'jeremy/rack-ratelimit'
 
 # API
 # gem 'oj', '~> 3.10' # Faster JSON
@@ -52,9 +47,14 @@ gem 'devise', '~> 4.7'
 
 # Background Job
 # gem 'sidekiq'
+# gem "sidekiq-failures"
+# gem "sidekiq_alive", "~> 2.0" # liveness probe for Sidekiq pod in Kubernetes
 
 # Auditing
 # gem 'paper_trail', '~> 10.3'
+
+# Other
+gem "bootsnap", ">= 1.4.6", require: false # Reduces boot times through caching; required in config/boot.rb
 
 group :staging, :production do
   gem "newrelic_rpm"
@@ -62,6 +62,7 @@ group :staging, :production do
 end
 
 group :test do
+  gem "sqlite3"
   gem "capybara", "~> 3.32"
   gem "capybara-screenshot", "~> 1.0"
   # Easy installation and use of web drivers to run system tests with browsers
@@ -88,11 +89,10 @@ group :test do
 end
 
 group :development, :test do
-  gem "sqlite3"
   gem "dotenv-rails", "~> 2.7"
 
   gem "awesome_print", "~> 1.8", require: false
-  gem "byebug", platform: :mri
+  gem "byebug"
   gem "pry-byebug", "~> 3.9", platform: :mri
   gem "pry-rails", "~> 0.3"
 
@@ -110,6 +110,7 @@ group :development, :test do
 
   gem "bundler-audit", "~> 0.6", require: false
   gem "flay", "~> 2.12", require: false
+  gem 'benchmark-ips', require: false
 end
 
 group :development do

@@ -1,4 +1,4 @@
-FROM ruby:2.6-alpine
+FROM ruby:2.6-alpine as build
 
 MAINTAINER Codecraft Team <team@codecraft63.com>
 
@@ -26,8 +26,29 @@ ENV LANG=C.UTF-8 \
 
 ENV PATH /app/bin:$PATH
 
+ENV RAILS_ENV=production
+ENV NODE_ENV=production
+ENV ASSETS_PRECOMPILE=1
+ENV SECRET_KEY_BASE=1
+
+RUN mkdir -p /app/config
 WORKDIR /app
+
+COPY Gemfile Gemfile.lock package.json yarn.lock ./
 
 RUN gem update --system && \
     gem install bundler io-console -N && \
-    bundle config build.nokogiri --use-system-libraries
+    bundle config build.nokogiri --use-system-libraries && \
+    bundle install
+
+COPY . /app
+
+RUN rails assets:precompile
+
+# cleanup
+RUN rm -rf node_modules tmp/cache vendor/assets test
+
+EXPOSE 3000
+
+ENTRYPOINT ["bundle", "exec"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
