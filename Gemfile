@@ -126,7 +126,7 @@ group :development do
   gem "letter_opener"
 
   # Better errors handler
-  gem "better_errors", "~> 2.7"
+  gem "better_errors", "~> 2.8"
   gem "binding_of_caller", "~> 0.8"
 end
 
